@@ -1,0 +1,64 @@
+# Name: Emmanuel P. Tuling
+# Section: IT5L(3418)
+# Activity Number: Laboratory Activity 4
+
+while True:
+    print("================================")
+    print("         BMI CALCULATOR")
+    print("================================")
+    print("1. Calculate BMI")
+    print("2. View BMI Categories")
+    print("3. Exit")
+    print("================================")
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        print()
+        name = input("Enter your name: ")
+        weight = float(input("Enter your weight in kilograms: "))
+        height = float(input("Enter your height in meters: "))
+        print()
+
+        if weight > 0 and height > 0:
+            bmi = weight / (height * height)
+
+            if bmi < 18.5:
+                category = "Underweight"
+            elif bmi < 25:
+                category = "Normal weight"
+            elif bmi < 30:
+                category = "Overweight"
+            else:
+                category = "Obesity"
+
+            print("================================")
+            print("           BMI RESULT")
+            print("================================")
+            print(f"Name: {name}")
+            print(f"Weight: {weight} kg")
+            print(f"Height: {height} m")
+            print(f"BMI: {bmi:.2f}")
+            print(f"Category: {category}")
+            print("================================")
+        else:
+            print("Invalid input. Weight and height must be greater than zero.")
+        print()
+
+    elif choice == "2":
+        print()
+        print("BMI CATEGORIES")
+        print("Below 18.5       : Underweight")
+        print("18.5 to below 25 : Normal weight")
+        print("25 to below 30   : Overweight")
+        print("30 and above     : Obesity")
+        print()
+
+    elif choice == "3":
+        print()
+        print("Thank you for using the BMI Calculator!")
+        break
+
+    else:
+        print()
+        print("Invalid choice. Please select 1, 2, or 3.")
+        print()
